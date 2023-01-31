@@ -16,9 +16,8 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "ne",
-	Short: "Bookmark a command with a name of your choice",
-	Long: `This cli allows you to bookmark a command with a name that you
-           will have an easier time remembering.`,
+	Short: "ClI package",
+	Long:  `I'm creating this CLI just to develop commands that I think would be useful to myself.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) {},

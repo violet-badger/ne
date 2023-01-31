@@ -1,6 +1,5 @@
 /*
 Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
@@ -12,20 +11,21 @@ import (
 
 // runCmd represents the run command
 var runCmd = &cobra.Command{
-	Use:   "run",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Use:   "run -n [name] -v [command]",
+	Short: "Run a saved command",
+	Long: `Run saved command, add a commnad, or delete a command For example:
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+ne run -n "git_undo" -v "git reset --soft HEAD~1"
+ne run git_undo
+ne run -d git_indo`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("run called")
 	},
 }
 
 func init() {
+	rootCmd.PersistentFlags().StringP("name", "n", "name", "memorable command name")
+	rootCmd.PersistentFlags().StringP("value", "v", "value", "original command name")
 	rootCmd.AddCommand(runCmd)
 
 	// Here you will define your flags and configuration settings.
